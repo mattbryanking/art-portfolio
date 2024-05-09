@@ -1,29 +1,23 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import about from "../../../public/about.jpg";
+import headshot from "/headshot.jpg";
+import background from "/background.mp4";
 import "./AboutPage.css";
 
 const AboutPage = () => {
     const [hover, setHover] = useState(null);
-    const { scrollYProgress } = useScroll();
-
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-    const events = useTransform(scrollYProgress, value =>
-        value < 0.3 ? 'auto' : 'none'
-    );
 
     return (
-        <motion.div
-            className="about-page"
-            style={{ scale: scale, opacity: opacity, pointerEvents: events }}
-        >
-            <div className="about-page-container">
+        <div className="about-page">
+            <motion.video autoPlay loop muted className="background-video">
+                <source src={background} type="video/mp4" />
+            </motion.video>
+            <div className="about-page-top">
                 <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 1 }}
-                    src={about}
+                    src={headshot}
                     alt="about"
                 />
                 <div className="about-page-text">
@@ -113,7 +107,7 @@ const AboutPage = () => {
                     </motion.div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

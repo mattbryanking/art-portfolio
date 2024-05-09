@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,9 +10,13 @@ const Navbar = () => {
             transition={{ delay: 3.5, duration: 1 }}
             className="navbar"
         >
-            <h1>WORK</h1>
+            <Link to="/work">
+                <h1>WORK</h1>
+            </Link>
             <h1>BMNYC</h1>
-            <h1>ABOUT</h1>
+            <Link to="/about">
+                <h1>ABOUT</h1>
+            </Link>
         </motion.div>
     );
 };

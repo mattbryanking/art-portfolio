@@ -12,11 +12,24 @@
 .navbar > h1 {
     font-size: 1vw;
     font-weight: 600;
-    cursor: pointer;
-    position: relative;
+    transform: translateX(.2vw);
+    user-select: none;
 }
 
-.navbar > h1::after {
+.navbar > a {
+    font-weight: 300;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+}
+
+.navbar > a > h1 {
+    font-size: 1vw;
+    font-weight: 300;
+    user-select: none;
+}
+
+.navbar > a > h1::after {
     content: "";
     position: absolute;
     width: 0;
@@ -28,14 +41,6 @@
     transition: width .15s ease-out;
 }
 
-.navbar > h1:hover::after {
+.navbar > a > h1:hover::after {
     width: 100%;
-}
-
-.navbar > h1:first-of-type, .navbar > h1:last-of-type {
-    font-weight: 300;
-}
-
-.navbar > h1:nth-of-type(2) {
-    transform: translateX(.2vw);
 }
