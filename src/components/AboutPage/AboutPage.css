@@ -49,14 +49,6 @@
     margin-bottom: 1vw;
 }
 
-.about-text > p {
-    font-size: 1.5vw;
-    font-weight: 300;
-    line-height: 1.5vw;
-    margin-bottom: 1vw;
-    position: relative;
-}
-
 .dark {
     opacity: 0.3 !important;
 }
@@ -68,15 +60,10 @@
     }
 
     .about-page-top > img {
-        width: 82vw;
+        width: 57vw;
     }
 
     .about-text > h1 {
-        font-size: 8vw;
-    }
-
-    .about-text > p {
-        font-size: 3vw;
-        line-height: 3vw;
+        font-size: 5.5vw;
     }
 }
