@@ -3,9 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import about from "../../../public/about.jpg";
 import "./AboutPage.css";
 
-const client_id = import.meta.env.VITE_INSTAGRAM_APP_ID;
-const client_secret = import.meta.env.VITE_INSTAGRAM_APP_SECRET;
-
 const AboutPage = () => {
     const [hover, setHover] = useState(null);
     const { scrollYProgress } = useScroll();
@@ -15,33 +12,6 @@ const AboutPage = () => {
     const events = useTransform(scrollYProgress, value =>
         value < 0.3 ? 'auto' : 'none'
     );
-
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        // Fetch images from Unsplash API
-        const fetchInstagramImages = async () => {
-            const res = await fetch(
-                "https://api.instagram.com/oauth/authorize",
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "client_id": client_id,
-                        "client_secret": client_secret,
-                        "scope": "user_profile,user_media",
-                        "grant_type": "authorization_code",
-                    },
-                }
-            );
-
-            const data = await res.json();
-            console.log(data);
-        }
-
-        fetchInstagramImages();
-    }, []);
-
 
     return (
         <motion.div
