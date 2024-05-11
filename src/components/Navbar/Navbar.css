@@ -44,3 +44,18 @@
 .navbar > a > h1:hover::after {
     width: 100%;
 }
+
+@media only screen and (max-width: 650px) {
+    .navbar {
+        padding: 6vw;
+    }
+
+    .navbar > h1 {
+        font-size: 5vw;
+    }
+
+    .navbar > a > h1 {
+        font-size: 5vw;
+    }
+}
+

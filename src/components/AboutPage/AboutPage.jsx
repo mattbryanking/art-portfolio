@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import headshot from "/headshot.jpg";
-import background from "/background.mp4";
 import "./AboutPage.css";
 
 const AboutPage = () => {
     const [hover, setHover] = useState(null);
 
     return (
-        <div className="about-page">
-            <motion.video autoPlay loop muted className="background-video">
-                <source src={background} type="video/mp4" />
-            </motion.video>
-            <div className="about-page-top">
+        <>
+            <div className="about-page">
                 <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -31,7 +28,7 @@ const AboutPage = () => {
                                 : "about-text"
                         }
                     >
-                        <h1>BRENDAN</h1>
+                        <h1>BRENDAN </h1>
                         <h1>MATEO</h1>
                     </motion.div>
                     <motion.div
@@ -44,7 +41,7 @@ const AboutPage = () => {
                                 : "about-text"
                         }
                     >
-                        <h1>PHOTOGRAPHER &nbsp;</h1>
+                        <h1>PHOTOGRAPHER </h1>
                         <h1>&</h1>
                     </motion.div>
                     <motion.div
@@ -57,7 +54,7 @@ const AboutPage = () => {
                                 : "about-text"
                         }
                     >
-                        <h1>VISUAL</h1>
+                        <h1>VISUAL </h1>
                         <h1>STORYTELLER</h1>
                     </motion.div>
                     <motion.div
@@ -70,8 +67,8 @@ const AboutPage = () => {
                                 : "about-text"
                         }
                     >
-                        <h1>NEW</h1>
-                        <h1>YORK</h1>
+                        <h1>NEW </h1>
+                        <h1>YORK </h1>
                         <h1>CITY</h1>
                     </motion.div>
                     <motion.div
@@ -86,9 +83,9 @@ const AboutPage = () => {
                                 : "about-text link"
                         }
                     >
-                        <h1>+1</h1>
-                        <h1>917</h1>
-                        <h1>442</h1>
+                        <h1>+1 </h1>
+                        <h1>917 </h1>
+                        <h1>442 </h1>
                         <h1>4656</h1>
                     </motion.div>
                     <motion.div
@@ -107,7 +104,10 @@ const AboutPage = () => {
                     </motion.div>
                 </div>
             </div>
-        </div>
+            <Link to="/admin" className="admin-link">
+                <p>SITE ADMINS</p>
+            </Link>
+        </>
     );
 };
 
